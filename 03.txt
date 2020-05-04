@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Slova {
+public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Введите слова одной строкой через пробел");
+            String input = sc.nextLine();
+            int count = 0;
+            if(input.length() != 0){
+            count++;
+            for (int i = 0; i < input.length(); i++) {    
+                    if(input.charAt(i) == ' '){
+                    count++;
+                    }
+                }
+            }
+            System.out.println("Вы ввели "+count+"слов");
+        String [] str = sc.nextLine().split(" ");
+        System.out.println("Исходный текст: " + Arrays.toString(str));
+        Arrays.sort(str, Comparator.comparing(String::length));
+        System.out.println("Текст в порядке возрастания длины слов: " + Arrays.toString(str));
+public String firstUpperCase(String word){
+	if(word == null || word.isEmpty()) return ""; 
+	return word.substring(0, 1).toUpperCase() + word.substring(1);
+}
+}
+}

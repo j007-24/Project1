@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Chastota {
+public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите текст и слово, частоту появления которого нужно определить");
+        String message = sc.nextLine();
+	String word = sc.nextLine();
+public static int searchWord(String message, String word) {
+        message = message.toLowerCase();
+        word = word.toLowerCase();
+        int i = message.indexOf(word);
+        int count = 0;
+        while (i >= 0) {
+            count++;
+            i = message.indexOf(word, i + 1);
+            }
+        return count;
+    	}
+System.out.println(("Слово "+word+" встречается "+count+" раз"));
+}
+}

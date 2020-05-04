@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class NODNOK{
+    public static void main(String[] args){
+    Scanner scn=new Scanner(System.in);
+    System.out.println("Введите два целых числа через пробел");
+if(scn.hasNextInt()){
+	int n1 = scn.nextInt();
+      	int n2 = scn.nextInt();
+        int a = n1, b = n2;
+        while (a != b) {
+        if (a > b) {
+           a = a - b;
+           } else {
+           b = b - a;
+           }
+        }
+        int nod = a;
+        int nok = n1 / nod * n2;
+        System.out.println(" НОД(%d, %d) = %d\n", n1, n2, nod);
+        System.out.println(" НОК(%d, %d) = %d\n", n1, n2, nok);
+   	}
+else System.out.println("Ошибка. Вы ввели одно или оба числа неверно");
+}
+}

@@ -1,0 +1,32 @@
+import java.util.Scanner;
+class Palindrom {
+static int createPalindrome(int input, int b, int isOdd) {
+    int n = input;
+    int palin = input;
+      if (isOdd == 1)
+        n /= b;
+      while (n > 0) {
+        palin = palin * b + (n % b);
+        n /= b;
+      }
+    return palin;
+}
+static void generatePalindromes(int n) {
+    int number;
+      for (int j = 0; j < 2; j++) {
+      int i = 1;
+      while ((number = createPalindrome(i, 10, j % 2)) < n) {
+      System.out.print(number + " ");
+      i++;
+      }
+      }
+}
+public static void main(String[] args) {
+Scanner k = new Scanner(System.in);
+       System.out.println("¬ведите число не более 100");
+       if(k.nextInt()>100) {
+System.out.println("ќшибка. ¬аше число больше 100");
+}
+else generatePalindromes(n);
+}
+}
